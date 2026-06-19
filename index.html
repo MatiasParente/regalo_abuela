@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feliz Día del Abuelo</title>
+    <!-- Fuentes para un toque elegante y cálido -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Lora:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Audio de fondo -->
+    <audio id="bg-music" loop>
+        <source src="resources/EL CHAQUEÑO PALAVECINO (enganchado) - Tincho Ojeda (Mucho folclore) (128k).mp3" type="audio/mpeg">
+        Tu navegador no soporta el elemento de audio.
+    </audio>
+
+    <!-- Botón de música flotante -->
+    <button id="music-btn" class="music-btn">
+        <span id="music-icon">Reproducir Música</span>
+    </button>
+
+    <header class="hero">
+        <div class="hero-content">
+            <h2 class="bible-verse">"Todo lo puedo en Cristo que me fortalece"<br><span>- Filipenses 3:14 -</span></h2>
+            <h1>¡Feliz Día Abuela!</h1>
+            <p class="subtitle">Que Dios te bendiga siempre. Con mucho amor de toda tu familia.</p>
+        </div>
+    </header>
+
+    <main>
+        <!-- Decoración superior -->
+        <div class="decoration-container">
+            <img src="resources/lindo mensaje.jpeg" alt="Mensaje decorativo" class="deco-img">
+        </div>
+
+        <section class="album-section">
+            <h2 class="section-title">Unos lindos recuerdos</h2>
+            <div class="gallery" id="gallery">
+                <!-- Las fotos se insertarán desde el JS o directamente aquí -->
+                <div class="gallery-item"><img src="resources/abuela y todos sus hijos.jpeg" alt="La abuela y todos sus hijos" loading="lazy"></div>
+                <div class="gallery-item"><img src="resources/hija elsa y nieto matias.jpeg" alt="Hija Elsa y nieto Matias" loading="lazy"></div>
+                <div class="gallery-item"><img src="resources/hija elsa y nieto matias antiguo.jpeg" alt="Hija Elsa y nieto Matias Antiguo" loading="lazy"></div>
+                <div class="gallery-item"><img src="resources/hijo.jpeg" alt="Hijo" loading="lazy"></div>
+                <div class="gallery-item"><img src="resources/nieta lupita y hija maria.jpeg" alt="Nieta Lupita y Hija Maria" loading="lazy"></div>
+                <div class="gallery-item"><img src="resources/nieta luzmila.jpeg" alt="Nieta Luzmila" loading="lazy"></div>
+                <div class="gallery-item"><img src="resources/nieta oriana.jpeg" alt="Nieta Oriana" loading="lazy"></div>
+                <div class="gallery-item"><img src="resources/nieto lucas y oriana.jpeg" alt="Nieto Lucas y Oriana" loading="lazy"></div>
+                <div class="gallery-item"><img src="resources/nieto.jpg" alt="Nieto" loading="lazy"></div>
+                <div class="gallery-item"><img src="resources/oriana, hija maria, abuela.jpeg" alt="Oriana, Hija Maria, Abuela" loading="lazy"></div>
+                <div class="gallery-item"><img src="resources/nieto mateo.jpeg" alt="Nieto Mateo" loading="lazy"></div>
+                <div class="gallery-item"><img src="resources/nietos antiguo.jpeg" alt="Nietos Antiguo" loading="lazy"></div>
+                <div class="gallery-item"><img src="resources/nietos 2.jpeg" alt="Nietos 2" loading="lazy"></div>
+                <div class="gallery-item"><img src="resources/abuela.jpeg" alt="Abuela" loading="lazy"></div>
+            </div>
+        </section>
+
+        <!-- Decoración central -->
+        <div class="decoration-container">
+            <img src="resources/lindo mensaje 2.jpeg" alt="Mensaje decorativo 2" class="deco-img">
+        </div>
+
+        <section class="game-section">
+            <h2 class="section-title">¡Un juego de unir pares!</h2>
+            <div class="memory-game" id="memory-game">
+                <!-- Las cartas del juego se generan en script.js -->
+            </div>
+            
+            <div id="game-win-modal" class="modal hidden">
+                <div class="modal-content text-center">
+                    <h2>¡Felicidades!</h2>
+                    <p>Has encontrado todos los recuerdos.</p>
+                    <button id="restart-btn" class="btn">Jugar de nuevo</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Modal para galería -->
+        <div id="image-modal" class="modal hidden">
+            <span class="close-modal">&times;</span>
+            <img class="modal-content-img" id="modal-img">
+        </div>
+    </main>
+
+    <footer>
+        <p>Hecho con amor y la bendición de Dios para la mejor abuela.</p>
+        <div class="footer-decoration">
+            <img src="resources/escudo peñarol.png" alt="Escudo Peñarol" class="logo-penarol pulse">
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

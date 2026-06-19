@@ -1,0 +1,355 @@
+/* Variables y Reset */
+:root {
+    --color-primary: #d4af37; /* Dorado cálido (religioso) */
+    --color-secondary: #f4f1ea; /* Blanco hueso / pergamino */
+    --color-text: #4a4a4a; /* Gris oscuro para legibilidad */
+    --color-bg: #fafafa; /* Fondo muy claro */
+    --color-accent-blue: #89cff0; /* Celeste muy suave (cielo) */
+    --color-penarol-yellow: #fbd014;
+    --color-penarol-black: #111111;
+    --font-heading: 'Playfair Display', serif;
+    --font-body: 'Lora', serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-body);
+    background: linear-gradient(rgba(250, 250, 250, 0.9), rgba(250, 250, 250, 0.9)), url('resources/Dios 1.jpeg') center/cover fixed;
+    color: var(--color-text);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* Tipografía */
+h1, h2, h3 {
+    font-family: var(--font-heading);
+    color: var(--color-primary);
+    text-align: center;
+}
+
+/* Audio Button */
+.music-btn {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+    background-color: var(--color-primary);
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 30px;
+    font-family: var(--font-body);
+    font-weight: 600;
+    font-size: 0.9rem;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    cursor: pointer;
+    transition: transform 0.3s, background-color 0.3s;
+}
+
+.music-btn:active {
+    transform: scale(0.95);
+}
+
+.music-btn.playing {
+    background-color: var(--color-penarol-yellow);
+    color: var(--color-penarol-black);
+}
+
+/* Hero Section */
+.hero {
+    min-height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: linear-gradient(to bottom, rgba(255,255,255,0.7), rgba(244,241,234,0.9)), url('resources/Dios 2.jpg') center/cover;
+    padding: 2rem;
+    position: relative;
+    border-bottom: 5px solid var(--color-primary);
+}
+
+.hero::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: linear-gradient(90deg, var(--color-penarol-yellow) 50%, var(--color-penarol-black) 50%);
+}
+
+.hero-content {
+    background: rgba(244, 197, 197, 0.85);
+    padding: 2rem;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    max-width: 600px;
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: var(--color-primary);
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+}
+
+.bible-verse {
+    font-size: 1.8rem;
+    color: #b8860b; /* Dorado más oscuro para resaltar */
+    margin-bottom: 1.5rem;
+    line-height: 1.3;
+    text-shadow: 1px 1px 3px rgba(255,255,255,0.8);
+}
+
+.bible-verse span {
+    font-size: 1rem;
+    font-style: italic;
+    color: #666;
+    display: block;
+    margin-top: 0.5rem;
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    font-style: italic;
+    color: #666;
+}
+
+.logo-penarol {
+    width: 80px;
+    margin-bottom: 1rem;
+}
+
+/* Decoraciones */
+.decoration-container {
+    display: flex;
+    justify-content: center;
+    padding: 2rem;
+}
+
+.deco-img {
+    max-width: 80%;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    border: 3px solid var(--color-secondary);
+}
+
+/* Secciones Generales */
+main {
+    padding-bottom: 4rem;
+}
+
+.section-title {
+    font-size: 2rem;
+    margin: 2rem 0;
+    position: relative;
+    display: inline-block;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.section-title::after {
+    display: block;
+    font-size: 1.2rem;
+    margin-top: 5px;
+}
+
+/* Galería / Álbum */
+.album-section {
+    padding: 0 1rem;
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 15px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.gallery-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    aspect-ratio: 1 / 1;
+    cursor: pointer;
+    background-color: #eee;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.gallery-item:hover img, .gallery-item:active img {
+    transform: scale(1.1);
+}
+
+/* Juego de Memoria */
+.game-section {
+    padding: 2rem 1rem;
+    background-color: var(--color-secondary);
+    border-top: 2px dashed var(--color-primary);
+    border-bottom: 2px dashed var(--color-primary);
+}
+
+.game-instructions {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    font-size: 1.1rem;
+}
+
+.memory-game {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    max-width: 600px;
+    margin: 0 auto;
+    perspective: 1000px;
+}
+
+.memory-card {
+    position: relative;
+    aspect-ratio: 1 / 1;
+    transform-style: preserve-3d;
+    transition: transform 0.6s cubic-bezier(0.4, 0.0, 0.2, 1);
+    cursor: pointer;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.15);
+    border-radius: 8px;
+}
+
+.memory-card.flip {
+    transform: rotateY(180deg);
+}
+
+.front-face, .back-face {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    background-color: white; /* Previene transparencias */
+}
+
+.front-face {
+    transform: rotateY(180deg);
+}
+
+.front-face img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.back-face {
+    background: linear-gradient(135deg, var(--color-primary), #e6c55c);
+    color: white;
+    font-size: 2rem;
+    border: 2px solid white;
+}
+
+/* Modales */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.95);
+    z-index: 2000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 1;
+    transition: opacity 0.3s;
+}
+
+.modal.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.modal-content-img {
+    max-width: 90%;
+    max-height: 80vh;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    border: 5px solid var(--color-primary);
+}
+
+.close-modal {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 40px;
+    color: var(--color-primary);
+    cursor: pointer;
+}
+
+.modal-content.text-center {
+    background: white;
+    padding: 3rem 2rem;
+    border-radius: 20px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+    border: 3px solid var(--color-primary);
+    max-width: 90%;
+}
+
+.btn {
+    margin-top: 1.5rem;
+    background-color: var(--color-primary);
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    font-size: 1.1rem;
+    border-radius: 30px;
+    cursor: pointer;
+    font-family: var(--font-body);
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 2rem;
+    background-color: var(--color-bg);
+    color: #777;
+}
+
+.footer-decoration {
+    font-size: 1.5rem;
+    margin-top: 10px;
+}
+
+/* Animaciones */
+.pulse {
+    animation: pulse 2s infinite ease-in-out;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+/* Media Queries para ajuste extra en móviles */
+@media (min-width: 768px) {
+    .memory-game {
+        gap: 15px;
+    }
+    .hero h1 {
+        font-size: 3.5rem;
+    }
+}
