@@ -81,7 +81,9 @@ document.addEventListener('DOMContentLoaded', () => {
         'resources/nieto mateo.jpeg',
         'resources/nietos antiguo.jpeg',
         'resources/nietos 2.jpeg',
-        'resources/abuela.jpeg'
+        'resources/abuela.jpeg',
+        'resources/nieta lici y oriana.jpeg',
+        'resources/abuela y angel.jpeg'
     ];
 
     let cards = [];
